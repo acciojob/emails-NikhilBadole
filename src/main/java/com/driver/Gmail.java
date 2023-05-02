@@ -5,11 +5,13 @@ import java.util.*;
 public class Gmail extends Email {
 
     int inboxCapacity; //maximum number of mails inbox can store
-    TreeMap<String, Mails> inbox = new TreeMap<>();  //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
-    TreeMap<String, Mails> trash = new TreeMap<>();  //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
+    TreeMap<String, Mails> inbox;  //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
+    TreeMap<String, Mails> trash;  //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
     public Gmail(String emailId, int inboxCapacity) {
         super(emailId);
         this.inboxCapacity = inboxCapacity;
+        this.inbox  = new TreeMap<>();
+        this.trash = new TreeMap<>();
     }
 
     public void receiveMail(Date date, String sender, String message){
