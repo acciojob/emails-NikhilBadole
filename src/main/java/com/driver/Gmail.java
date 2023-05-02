@@ -44,7 +44,7 @@ public class Gmail extends Email {
 
     public String findLatestMessage(){
         if(inbox.size() == 0){
-            return "null";
+            return null;
         }
 
         Map.Entry<String,Mails> LatestStringMail = inbox.lastEntry();
@@ -56,7 +56,7 @@ public class Gmail extends Email {
 
     public String findOldestMessage(){
         if(inbox.size() == 0){
-            return "null";
+            return null;
         }
 
         Map.Entry<String,Mails> oldestStringMail = inbox.firstEntry();
