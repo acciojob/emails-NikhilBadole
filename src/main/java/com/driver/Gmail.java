@@ -68,7 +68,7 @@ public class Gmail extends Email {
         int numberOfMailsBetweenDates = 0;
         for(String msg : inbox.keySet()){
             Mails currMail = inbox.get(msg);
-            if(currMail.getDate().after(start) || currMail.getDate().before(end) || currMail.getDate().equals(start) || currMail.getDate().equals(end)){
+            if((currMail.getDate().after(start) && currMail.getDate().before(end)) || currMail.getDate().equals(start) || currMail.getDate().equals(end)){
                 numberOfMailsBetweenDates++;
             }
         }
